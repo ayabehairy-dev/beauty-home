@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beauty Home | بيوتي هوم</title>
+    <!-- خط Cairo من Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <!-- أيقونات Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- 1. شريط Navigation العلوي -->
+    <header class="navbar">
+        <div class="nav-top">
+            <!-- اللوجو -->
+            <a href="#" class="logo">
+                <span class="logo-main">Beauty Home</span>
+                <span class="logo-sub">للمنزل العصري</span>
+            </a>
+
+            <!-- صندوق البحث -->
+            <div class="search-container">
+                <input type="text" id="search-input" placeholder="ابحث عن منتج، أدوات مطبخ، منظمات...">
+                <button id="search-btn"><i class="fa-solid fa-magnifying-glass"></i></button>
+            </div>
+
+            <!-- زر السلة -->
+            <div class="cart-trigger" id="open-cart-btn">
+                <div class="cart-icon-wrap">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    <span class="cart-badge" id="cart-count">0</span>
+                </div>
+                <div class="cart-text">
+                    <span class="small">سلة المشتريات</span>
+                    <strong id="cart-total-header">0 ج.م</strong>
+                </div>
+            </div>
+        </div>
+
+        <!-- شريط الأقسام (Sub Header) -->
+        <nav class="nav-categories">
+            <ul>
+                <li><button class="cat-btn active" data-category="all"><i class="fa-solid fa-border-all"></i> كل المنتجات</button></li>
+                <li><button class="cat-btn" data-category="kitchen">أدوات المطبخ</button></li>
+                <li><button class="cat-btn" data-category="organizers">البلاستيكات</button></li>
+                <li><button class="cat-btn" data-category="appliances">أجهزة منزلية</button></li>
+                <li><button class="cat-btn" data-category="crystals">النيش و الكريستالات</button></li>
+
+                <li><button class="cat-btn" data-category="cavarage">المفروشات</button></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- 2. بانر رئيسي كلاسيكي -->
+    <section class="hero-banner">
+        <div class="hero-content">
+            <h2>تشكيلة مميزة لكل زاوية في بيتك ✨</h2>
+            <p>أرقى الأدوات المنزلية، المطبخ والمفروشات بأسعار مميزة وجودة عالية.</p>
+        </div>
+    </section>
+
+    <!-- 3. شريط مميزات الشراء -->
+    <section class="features-bar">
+        <div class="feature-item">
+            <i class="fa-solid fa-truck-fast"></i>
+            <div>
+                <h4>توصيل سريع</h4>
+                <p>لكل المحافظات</p>
+            </div>
+        </div>
+        <div class="feature-item">
+            <i class="fa-solid fa-shield-halved"></i>
+            <div>
+                <h4>جودة مضمونة</h4>
+                <p>منتجات عالية الخامة</p>
+            </div>
+        </div>
+        <div class="feature-item">
+            <i class="fa-solid fa-headset"></i>
+            <div>
+                <h4>خدمة العملاء</h4>
+                <p>تواصل مباشر عبر الواتساب</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. شبكة عرض المنتجات -->
+    <main class="main-container">
+        <div class="section-title">
+            <h3>منتجاتنا المختارة</h3>
+            <span class="title-line"></span>
+        </div>
+
+        <div id="products-grid" class="products-grid">
+            <!-- المنتجات بترسم هنا من الـ JavaScript -->
+        </div>
+    </main>
+
+    <!-- 5. سلة المشتريات الجانبية (Sidebar) -->
+    <div id="cart-overlay" class="cart-overlay"></div>
+    <aside id="cart-sidebar" class="cart-sidebar">
+        <div class="cart-header">
+            <h3><i class="fa-solid fa-bag-shopping"></i> سلة المشتريات</h3>
+            <button id="close-cart-btn" class="close-btn">&times;</button>
+        </div>
+
+        <div id="cart-items" class="cart-items">
+            <!-- عناصر السلة -->
+        </div>
+
+        <div class="cart-footer">
+            <div class="summary-row">
+                <span>الإجمالي الكلي:</span>
+                <strong id="cart-total-price">0 ج.م</strong>
+            </div>
+            <button id="checkout-btn" class="whatsapp-btn">
+                <i class="fa-brands fa-whatsapp"></i> تأكيد الطلب عبر الواتساب
+            </button>
+        </div>
+    </aside>
+
+    <!-- 6. نافذة تكبير صور المنتجات (Lightbox Modal) -->
+    <div id="image-modal" class="image-modal">
+        <span class="close-modal">&times;</span>
+        <img class="modal-content" id="img-full" alt="معاينة المكبرة">
+        <div id="modal-caption"></div>
+    </div>
+
+    <!-- الفوتر -->
+    <footer class="footer">
+        <p>© Beauty Home - جميع الحقوق محفوظة</p>
+
+        <div class="social-links">
+            <a href="https://www.facebook.com/your-page-name" target="_blank" rel="noopener noreferrer" class="facebook-link">
+                <i class="fa-brands fa-facebook-f"></i> تابعنا على فيس بوك
+            </a>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
